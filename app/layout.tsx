@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 
 import ConvexClientProvider from "@/providers/convex-client-provider";
 
@@ -21,17 +19,15 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`antialiased`}>
-				<ClerkProvider>
-					<ConvexClientProvider>
+				<ConvexClientProvider>
+					<div className="w-full h-full">
+						<Sidebar />
 						<div className="w-full h-full">
-							<Sidebar />
-							<div className="w-full h-full">
-								<Navbar />
-								{children}
-							</div>
+							<Navbar />
+							{children}
 						</div>
-					</ConvexClientProvider>
-				</ClerkProvider>
+					</div>
+				</ConvexClientProvider>
 			</body>
 		</html>
 	);
