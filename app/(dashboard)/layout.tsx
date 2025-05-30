@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
-
-import ConvexClientProvider from "@/providers/convex-client-provider";
+import "../globals.css";
 
 import Navbar from "@/components/global/navbar";
 import Sidebar from "@/components/global/sidebar";
@@ -17,10 +15,14 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`antialiased w-full h-full`}>
-				<ConvexClientProvider>{children}</ConvexClientProvider>
-			</body>
-		</html>
+		<main className="w-full h-full">
+			<div className="w-full h-full">
+				<Sidebar />
+				<div className="w-[full] h-full">
+					<Navbar />
+					{children}
+				</div>
+			</div>
+		</main>
 	);
 }
