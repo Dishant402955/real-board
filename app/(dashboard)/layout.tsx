@@ -3,6 +3,7 @@ import "../globals.css";
 
 import Navbar from "@/components/global/navbar";
 import Sidebar from "@/components/global/sidebar";
+import { AuthLoading } from "convex/react";
 
 export const metadata: Metadata = {
 	title: "Real Board",
@@ -15,14 +16,16 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<main className="w-full h-full">
-			<div className="w-full h-full">
-				<Sidebar />
-				<div className="w-[full] h-full">
-					<Navbar />
-					{children}
+		<>
+			<main className="w-full h-full">
+				<div className="w-full h-full">
+					<Sidebar />
+					<div className="w-[full] h-full">
+						<Navbar />
+						{children}
+					</div>
 				</div>
-			</div>
-		</main>
+			</main>
+		</>
 	);
 }

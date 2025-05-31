@@ -1,10 +1,10 @@
+import { OrganizationList, OrganizationSwitcher } from "@clerk/nextjs";
 import React from "react";
-import OrgList from "./organization-list";
 
 const Sidebar = () => {
 	return (
-		<div className="fixed w-[16%] h-full bg-neutral-500/30">
-			<OrgList />
+		<div className="bg-neutral-700/30 w-[16%] h-full fixed py-10">
+			<OrganizationSwitcher hidePersonal />
 		</div>
 	);
 };

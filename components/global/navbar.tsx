@@ -1,7 +1,7 @@
 "use client";
 
 import { SignInButton, UserButton } from "@clerk/nextjs";
-import { Authenticated, Unauthenticated } from "convex/react";
+import { Authenticated, AuthLoading, Unauthenticated } from "convex/react";
 import { Button } from "../ui/button";
 
 const Navbar = () => {
@@ -10,13 +10,22 @@ const Navbar = () => {
 			<div className="flex-1">Search</div>
 			<div>
 				<Authenticated>
-					<UserButton />
+					<div className="h-10 w-10 flex justify-center items-center">
+						<UserButton />
+					</div>
 				</Authenticated>
 				<Unauthenticated>
-					<SignInButton mode="modal">
-						<Button>Sign in</Button>
-					</SignInButton>
+					<div className="h-10 w-10 flex justify-center items-center">
+						<SignInButton mode="modal">
+							<Button>Sign in</Button>
+						</SignInButton>
+					</div>
 				</Unauthenticated>
+				<AuthLoading>
+					<div className="h-10 w-10 flex justify-center items-center">
+						<div className="h-7 w-7 rounded-full bg-neutral-600 animate-spin border-b-2 border-t-2"></div>
+					</div>
+				</AuthLoading>
 			</div>
 		</div>
 	);

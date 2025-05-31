@@ -5,6 +5,7 @@ import ConvexClientProvider from "@/providers/convex-client-provider";
 
 import Navbar from "@/components/global/navbar";
 import Sidebar from "@/components/global/sidebar";
+import { AuthLoading } from "convex/react";
 
 export const metadata: Metadata = {
 	title: "Real Board",
